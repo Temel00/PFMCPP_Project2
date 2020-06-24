@@ -15,16 +15,13 @@ video: Chapter 2 - Part 3
  
  
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t) here: 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+Boolean
+Integer
+Unsigned Integer
+Floating Point
+Double Floating Point
+Character
+Valueless
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
     a) give each variable declaration an initial value
@@ -57,9 +54,33 @@ void variableDeclarations()
     //example:
     int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
     
+    int counter = 0;
+    int stepsTaken = 10;
+    int stairsClimbed = 120;
+
+    bool isWalking = true;
+    bool hasStarted = false;
+    bool counting = true;
+
+    unsigned int bricks = 0;
+    unsigned int windows = 6;
+    unsigned int movieRating = 3;
+
+    float averageDistance = 300.f;
+    float sideLength = 5.3f;
+    float temperature = 84.f;
+
+    double totalDistance = 900.45;
+    double poolVolume = 36050.0;
+    double distanceInInches = 12000.125;
+
+    char firstLetter = 't';
+    char variable = 'x';
+    char middleInitial = 'f';
+
     
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, counter, stepsTaken, stairsClimbed, isWalking, hasStarted, counting, bricks, windows, movieRating, averageDistance, sideLength, temperature, totalDistance, poolVolume, distanceInInches, firstLetter, variable, middleInitial); //passing each variable declared to the ignoreUnused() function
+
 }
 /*
  10 functions
@@ -74,43 +95,87 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
+int distanceMoved(int startDistance, int endDistance)
+{
+    ignoreUnused(startDistance, endDistance);
 
+    return {};
+}
 /*
  2)
  */
-
+void moveCar(float distanceToMove = 10.f, bool moveLeft = false)
+{
+    ignoreUnused(distanceToMove, moveLeft);
+}
 /*
  3)
  */
+bool hasMoved(int currentX, int currentY, int previousX, int previousY)
+{
+    ignoreUnused(currentX, currentY, previousX, previousY);
 
+    return{};
+}
 /*
  4)
  */
+float averageGPA(float student1GPA, float student2GPA = 3.5, float student3GPA = 3.f, float student4GPA = 3.8f)
+{
+    ignoreUnused(student1GPA, student2GPA, student3GPA, student4GPA);
 
+    return{};
+}
 /*
  5)
  */
-
+ void startRaining(float howMuchRain, bool isCold, float duration = 35.f)
+ {
+     ignoreUnused(howMuchRain, isCold, duration);
+ }
 /*
  6)
  */
+int shotputScore(int throw1Distance =  60, int throw2Distance = 55)
+{
+    ignoreUnused(throw1Distance, throw2Distance);
 
+    return{};
+}
 /*
  7)
  */
+double distancePlaneFlew(double startingDistance, float currentTripDistance = 160.4f)
+{
+    ignoreUnused(startingDistance, currentTripDistance);
 
+    return{};
+}
 /*
  8)
  */
+ float findShapeArea(float side1 ,float side2, float  side3 = 5.4f, float side4 = 4.f)
+ {
+     ignoreUnused(side1, side2, side3, side4);
 
+     return{};
+ }
 /*
  9)
  */
+char letterAhead(char startingLetter, int howManyAhead)
+{
+    ignoreUnused(startingLetter, howManyAhead);
 
+    return{};
+}
 /*
  10)
  */
-
+void drawLine(int point1X, int point1Y, int point2X = 19, int point2Y = 3)
+{
+    ignoreUnused(point1X, point1Y, point2X, point2Y);
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -131,27 +196,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto movementDistance = distanceMoved(90, 160);
     //2)
-    
+    moveCar();
     //3)
-    
+    auto isInOriginalSpot = hasMoved(0, 1, 0, 1);
     //4)
-    
+    auto classGPA = averageGPA(3.9f);
     //5)
-    
-    //6)
-    
+    startRaining(1.6f, true);
+    //6
+    auto throwerScore = shotputScore();
     //7)
-    
+    auto totalPlaneMileage = distancePlaneFlew(1400.2);
     //8)
-    
+    auto shapeArea = findShapeArea(4.f, 6.6f);
     //9)
-    
+    auto newLetter = letterAhead('D', 6);
     //10)
+    drawLine(4, 10);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, movementDistance, isInOriginalSpot, classGPA, throwerScore, totalPlaneMileage, shapeArea, newLetter);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
